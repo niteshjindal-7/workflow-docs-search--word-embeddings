@@ -15,24 +15,34 @@ Word2Vec is a three layer neural network  (input, 1-hidden, output) that learns 
 
 This approach requires a format of list of list for training (i.e. as an input) where every document is contained in a list and every list contains list of tokens of that documents. To get such an input, we transformed raw pdf documents to text data and then performed text cleaning to remove whitespaces, most frequent words, numbers, distracting quotes, alphanumeric values from the text and developed a corpus having a list of documents with each document containing a list of tokens.That is, each document contained meaningful tokens, which describes that document.
 Before passing this input to Word2Vec model function from gensim module, we set some of the model parameters:
+
   •	size=100. It refers to the embedding size or size of neurons in the hidden layer and is set to 100 because we did not have vast corpus size.
+  
   •	window=5. Model will capture information for the two words after and two words before the input vocab word during learning phase. 
+  
   •	sg=1. It implies that skip-gram model would be used whereas sg=0 implies that continuous bag-of-words model would be used.
+  
   •	alpha=learning rate which helps in minimising the loss function in each iteration.
   
 Once the model is trained and loaded, we capture the similarity scores of documents with user search query and the documents with high similarity score tends to me more closer to user query and displayed as a result.
 
 ## **Scope of Improvement:-**
+
   •	Existing document embedding approach can be replaced by using the advanced word embedding algorithms, such as BERT and ELMo which are capable enough to understand negation words and are computationally efficient.
+  
   •	Documents embeddings are likely to be similar for a particular topic or context. We can form a community of such embeddings in the form of various clusters.This could be achieved by using graph based community algorithm where each document embedding becomes a node and closer nodes form a cluster.Instead of parsing each document embedding , we could just measure which cluster of nodes(doc embeddings) is closer to user search query.
   
 ## **References:-**
 
 Word2Vec:
+
   https://rare-technologies.com/word2vec-tutorial/
+  
   https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
+  
   https://israelg99.github.io/2017-03-23-Word2Vec-Explained/
   http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
+  
   https://medium.com/analytics-vidhya/combining-word-embeddings-to-form-document-embeddings-9135a66ae0f
   https://medium.com/@zafaralibagh6/a-simple-word2vec-tutorial-61e64e38a6a1
 
