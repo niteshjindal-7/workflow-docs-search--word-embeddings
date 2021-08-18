@@ -1,4 +1,4 @@
-# workflow-docs-search 
+# workflow-docs-search-[word-embeddings]
 
 The dataset can be found at the below link:
 https://drive.google.com/drive/folders/1qIueRHoH06Lux1Kd0pmoiBQxx33ECOK-?usp=sharing
